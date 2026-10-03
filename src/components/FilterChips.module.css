@@ -52,3 +52,13 @@
   opacity: 0.6;
   font-size: 0.8rem;
 }
+
+.more {
+  padding: 5px 12px;
+  border: 1px dashed var(--accent);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.9rem;
+  cursor: pointer;
+}

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styles from './FilterChips.module.css'
 
 export interface FilterOption {
@@ -10,11 +11,23 @@ interface FilterChipsProps {
   options: FilterOption[]
   selected: string[]
   onToggle: (value: string) => void
+  // How many chips to show before the "Show all" button.
+  initialCount?: number
 }
 
 // One reusable group of toggle buttons. The parent owns the selected values;
 // this component only displays them and reports clicks (a "controlled" component).
-function FilterChips({ title, options, selected, onToggle }: FilterChipsProps) {
+function FilterChips({ title, options, selected, onToggle, initialCount = 12 }: FilterChipsProps) {
+  // Purely visual state, so it lives here and the parent never needs to know.
+  const [showAll, setShowAll] = useState(false)
+
+  // Collapsed view keeps the most common chips, plus anything selected so an
+  // active filter can never be hidden.
+  const shown = showAll
+    ? options
+    : options.filter((option, index) => index < initialCount || selected.includes(option.value))
+  const canExpand = options.length > initialCount
+
   return (
     <details className={styles.group} open>
       <summary className={styles.summary}>
@@ -22,7 +35,7 @@ function FilterChips({ title, options, selected, onToggle }: FilterChipsProps) {
         {selected.length > 0 && <span className={styles.badge}>{selected.length}</span>}
       </summary>
       <div className={styles.chips}>
-        {options.map((option) => {
+        {shown.map((option) => {
           const isOn = selected.includes(option.value)
           return (
             <button
@@ -36,6 +49,11 @@ function FilterChips({ title, options, selected, onToggle }: FilterChipsProps) {
             </button>
           )
         })}
+        {canExpand && (
+          <button type="button" className={styles.more} onClick={() => setShowAll((v) => !v)}>
+            {showAll ? 'Show fewer' : `Show all ${options.length}`}
+          </button>
+        )}
       </div>
     </details>
   )

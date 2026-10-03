@@ -11,7 +11,8 @@ interface MealRowProps {
 function MealRow({ meal, navState }: MealRowProps) {
   return (
     <Link to={`/meal/${meal.id}`} state={navState} className={styles.row}>
-      <img className={styles.thumb} src={meal.thumb} alt="" loading="lazy" />
+      {/* TheMealDB serves a ~200px "/small" copy: ~12x lighter than the full image. */}
+      <img className={styles.thumb} src={`${meal.thumb}/small`} alt="" loading="lazy" />
       <span className={styles.name}>{meal.name}</span>
       <span className={styles.country}>{meal.country}</span>
       <span className={styles.category}>{meal.category}</span>

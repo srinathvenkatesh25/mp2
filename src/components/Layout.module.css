@@ -1,0 +1,7 @@
+.notice {
+  margin: 0 0 16px;
+  padding: 10px 16px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  color: var(--text-h);
+}

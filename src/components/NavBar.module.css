@@ -1,0 +1,40 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+}
+
+.link {
+  padding: 6px 14px;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--text-h);
+}
+
+.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.active:hover {
+  color: #fff;
+}

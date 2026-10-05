@@ -1,0 +1,15 @@
+"turn","timestamp_utc","user_prompt"
+"1","2026-09-30T19:41:10.874Z","Throughly read the instructions of the readme file that has all the instructions for mp2. I want to go ahead with The meal Db api to display recipes by cuisine, health etc. Generate a plan md file that i can verify for the build
+[user feedback on plan, via prompt: keep this interactive as i need to be on learning mode to understand how react components work. have checkpoints where i can test and see the code to get the learning outcome from this mp]
+[user approved the plan, via prompt]"
+"3","2026-10-01T15:04:41.001Z","go ahead with cp1"
+"4","2026-10-01T15:17:17.519Z","instead of mocking data for the meals as fallback - i would fetch real data from the mealdb and store it in a separate file to pull the data from. proceed to cp2"
+"5","2026-10-01T15:25:52.409Z","what does the strictmode do and why am i runnning 26 twice"
+"6","2026-10-01T15:27:54.122Z","why do we have 26 requests"
+"7","2026-10-01T15:28:56.624Z","okay so coming to your questions - i wil cache all 26 requests and have a expiry to it?"
+"8","2026-10-01T15:32:55.244Z","build cp3 and cp4"
+"9","2026-10-01T21:01:28.949Z","i wasnt able to view any listing though"
+"10","2026-10-02T00:05:59.388Z","okay lets complete till cp7 now"
+"11","2026-10-02T19:03:15.668Z","okay it works well. if toggle returned list then there would be no change in the ui as it would show its own previous state and wont find the need to re render. can you answer question 1 and move to completeing upto cp9"
+"12","2026-10-03T17:01:46.927Z","[user attached an image: screenshot of a terminal showing ""git@github.com: Permission denied (publickey). fatal: Could not read from remote repository.""]
+[user answered a question, via prompt: ""How should I get your local code onto the GitHub repo, given the two histories are unrelated?""=""Force push (Recommended)""]"
